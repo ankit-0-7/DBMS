@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        /* Add some styling for the shake effect */
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            10%, 30%, 50%, 70%, 90% {
+                transform: translateX(-10px);
+            }
+            20%, 40%, 60%, 80% {
+                transform: translateX(10px);
+            }
+        }
+        .shake {
+            animation: shake 0.5s;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="text-gray-400 bg-white body-font h-screen">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col justify-center w-full items-center">
+            <div id="loginForm" class="lg:w-2/6 md:w-1/2 bg-gray-300 bg-opacity-30 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 mx-auto">
+                <h1 class="title-font font-medium text-3xl text-black mx-auto mb-2">
+                    Art Gallery | Login
+                </h1>
+                <!-- Display alert for wrong password -->
+                <div id="alert" class="error-message">Wrong username or password. Please try again.</div>
+                <form id="loginForm" action="/" method="POST">
+                    <div class="relative mb-4">
+                        <label for="username" class="leading-7 text-sm text-gray-400">Username</label>
+                        <input type="text" id="username" name="username" class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-indigo-900 rounded border border-gray-600 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                    <div class="relative mb-4">
+                        <label for="password" class="leading-7 text-sm text-gray-400">Password</label>
+                        <input type="password" id="password" name="password" class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-indigo-900 rounded border border-gray-600 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <!-- Error message for password -->
+                        <div id="passwordError" class="error-message">Please enter a valid password.</div>
+                    </div>
+                    <button type="submit" class="text-white hover:text-black transition-all duration-300 bg-black hover:bg-white border border-black py-2 px-8 focus:outline-none rounded text-lg">
+                        Login
+                    </button>
+                    <p class="text-xs mt-3">Don't have an Account yet ? <a class="text-xs text-black hover:underline" href="register.html">Register</a></p>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const alertDiv = document.getElementById('alert');
+                const passwordErrorDiv = document.getElementById('passwordError');
+
+                if (username.trim() === '' || password.trim() === '') {
+                    // Show alert for empty fields
+                    alertDiv.textContent = 'Please enter both username and password.';
+                    alertDiv.style.display = 'block';
+
+                    // Shake effect on the password input field
+                    document.getElementById('password').classList.add('shake');
+                    setTimeout(() => {
+                        document.getElementById('password').classList.remove('shake');
+                    }, 500);
+
+                    event.preventDefault();
+                } else {
+                    // Hide alert if it was shown previously
+                    localStorage.setItem('username',username)
+                    alertDiv.style.display = 'none';
+                }
+
+                // You can add more conditions or validations as needed
+            });
+        </script>
+    </section>
+</body>
+</html>

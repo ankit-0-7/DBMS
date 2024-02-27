@@ -1,0 +1,53 @@
+
+*{
+    margin:0;
+    padding: 0;
+ }
+
+ html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+.nav-container{
+    background-color: black;
+    height: 77px;
+    
+}
+.nav-items{
+    display: flex;
+    justify-content:space-around;
+    margin-top: 0px;
+    color: white    ;
+}
+
+
+/* Add this CSS to your existing style.css file */
+/* nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul ul li {
+    float: none;
+    width: 100%;
+    position: relative;
+}
+
+nav ul ul a {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul ul a:hover {
+    background-color: #4CAF50;
+    color: #fff;
+} */

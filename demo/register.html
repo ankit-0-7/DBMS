@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery | Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+<body>
+    <section class="text-gray-400 bg-white body-font h-screen">
+      <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col justify-center w-full items-center">
+        <form id="registerForm" class="lg:w-2/6 md:w-1/2 bg-gray-300 bg-opacity-30 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0  mx-auto" method="POST" action="/reg">
+            <h1 class="title-font font-medium text-3xl text-black mx-auto mb-2 ">
+                Sign Up
+              </h1>
+          <div class="relative mb-4">
+            <label for="first_name" class="leading-7 text-sm text-gray-400">First Name</label>
+            <input type="text" id="first_name" name="first_name" class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-indigo-900 rounded border border-gray-600 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+          <div class="relative mb-4">
+            <label for="last_name" class="leading-7 text-sm text-gray-400">Last Name</label>
+            <input type="text" id="last_name" name="last_name" class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-indigo-900 rounded border border-gray-600 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+          <div class="relative mb-4">
+            <label for="username" class="leading-7 text-sm text-gray-400">Username</label>
+            <input type="text" id="username" name="username" class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-indigo-900 rounded border border-gray-600 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+
+          <div class="relative mb-4">
+            <label for="phonenumber" class="leading-7 text-sm text-gray-400">Phone Number</label>
+            <input type="number" id="phonenumber" name="phonenumber" class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-indigo-900 rounded border border-gray-600 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+          
+          <div class="relative mb-4">
+            <label for="password" class="leading-7 text-sm text-gray-400">Password</label>
+            <input type="password" id="password" name="password" class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-indigo-900 rounded border border-gray-600 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+          <button type="submit" class="text-white hover:text-black transition-all duration-300 bg-black hover:bg-white border border-black py-2 px-8 focus:outline-none rounded text-lg">Register</button>
+          <p class="text-xs mt-3">Already have an Account? <a class="text-xs text-black hover:underline" href="login.html">Login</a></p>
+          
+        </form>
+      </div>
+    </section>
+    <!-- <script>
+       document.getElementById('registerForm').addEventListener('submit',(event)=>{
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const phonenumber = document.getElementById('phonenumber').value;
+        const first_name = document.getElementById('first_name').value;
+        const last_name = document.getElementById('last_name').value;
+        async function reg(){
+          const res = await fetch('/reg',{
+            method:"POST",
+            headers:{
+              'Content-type':"application/json"
+            },
+            body:JSON.stringify({
+              f_name:first_name,
+              l_name:last_name,
+              username:username,
+              phoneNo:phonenumber,
+              password:password
+            })
+          });
+          const data = await res.json();
+          const test = document.getElementById('test');
+        }
+        reg();
+      }) 
+    </script> -->
+</body>
+</html>
