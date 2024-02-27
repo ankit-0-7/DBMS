@@ -180,5 +180,30 @@ app.post('/reg', function (req, res) {
         });
 });
 
+app.get('/getCartdata', async (req, res) => {
+    const { username } = req.query;
+
+    try {
+        console.log(username)
+        connection.query("SELECT C.ART_ID,A.PRICE,A.TITLE FROM CART C,ART A WHERE c.USER_NAME=? AND C.ART_ID=A.ART_ID;",
+        [username],
+        function (error, results, fields) {
+            if (error) {
+                console.log("Error inserting record:", error);
+                return res.status(404).json({done:false});
+            } else {
+                console.log("Record retrived successfully!");
+                return res.status(200).json({cart:results,done:true});
+            }
+            res.end();
+        });
+        // return res.json({ cartData :true});
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
 // set app port 
 app.listen(4000);
