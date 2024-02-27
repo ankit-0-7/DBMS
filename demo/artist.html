@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="text-gray-900 bg-white body-font border-b border-black sticky top-0 z-50">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a href="index.html" class="flex title-font font-medium items-center text-black mb-4 md:mb-0">
+            <img src="logo png.png" width="60px">
+            
+            <span class="ml-3 text-xl">ArtGallery</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center ">
+            <a href="index.html" class="mr-5 hover:text-blue-500 cursor-pointer">Home</a>
+            <a  href="artist.html" class="mr-5 hover:text-blue-500 cursor-pointer">Artists</a>
+            <a href="exb.html" class="mr-5 hover:text-blue-500 cursor-pointer">Exhibitions</a>
+            <a href="artfair.html" class="mr-5 hover:text-blue-500 cursor-pointer">Art Fairs</a>
+            <a href="#about" class="mr-5 hover:text-blue-500 cursor-pointer">About</a>
+            <a href="#contactexb" class="mr-5 hover:text-blue-500 cursor-pointer">Contact</a>
+            <a href="shop.html" class="mr-5 hover:text-blue-500 cursor-pointer">Shop</a>
+        </nav>
+        
+        <div id="username" class="inline-flex text-white items-center bg-gray-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 rounded text-base mt-4 md:mt-0 transition-all ">Login
+          <!-- <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg> -->
+      </div>
+        </div>
+      </header>
+      <!-- Exhibitions -->
+<section class="text-gray-600 body-font overflow-hidden">
+    <div class="container px-10 py-24 mx-auto">
+      <div class="-my-8 divide-y-2 divide-gray-100">
+        <!-- Exhibition Block 1 -->
+        <div class="py-8 flex flex-wrap md:flex-nowrap">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col mr-10 mt-0">
+            <!-- Replace CATEGORY text with an image -->
+            <img src="Artist/zaam arif.png" alt="Category Image 1" class="w-full h-auto">
+            
+          </div>
+          <div class="md:flex-grow">
+            <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">ZAAM ARIF </h2>
+            <p><b>PAKISTANI, B. 1999</b></p>
+            <p class="leading-relaxed">
+                Zaam Arif, born in 1999 in Karachi, is a self-taught artist influenced by his painter parents. His art reflects philosophical and literary inspirations, evolving into a profound exploration of the human experience. Arif's work, characterized by a synergy between characters and their environment, has been showcased in solo exhibitions in the UK, the US, and Pakistan.
+
+                Notable upcoming events include his first solo exhibition in India at Vadehra Art Gallery, New Delhi (2024), and a viewing at the Cabin LA, Los Angeles (2024). Arif has also participated in group exhibitions globally. His work gained recognition in The New Yorker magazine in 2021, making him the youngest Pakistani artist featured. In 2021, he received the Malamegi Lab Research Grant in Italy and completed a residency at La Brea in Los Angeles in 2023. Currently based in Houston, Texas, Zaam Arif continues to make a mark in the art world.
+            </p>
+            <!-- <a class="text-indigo-500 inline-flex items-center mt-4">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a> -->
+          </div>
+        </div>
+  
+        <!-- Exhibition Block 2 -->
+        <div class="py-7 flex flex-wrap md:flex-nowrap">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col mr-10 mt-10">
+            <!-- Replace CATEGORY text with an image -->
+            <img src="Artist/sunil gupta.png" alt="Category Image 2" class="w-full h-auto">
+           
+          </div>
+          <div class="md:flex-grow">
+            <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 ">SUNIL GUPTA </h2>
+            <p class="cat-2"> <b>INDIAN, B. 1953</b></p>
+            <p class="leading-relaxed">
+                Sunil Gupta, an Indian–British–Canadian photographer born in 1953, has been a critical practitioner of independent photography for over five decades, focusing on race, migration, and queer issues. His extensive solo exhibitions and retrospectives, showcased globally, include venues such as the Photographers’ Gallery in London and the Ryerson Image Centre in Toronto.
+
+                Active in group exhibitions at renowned institutions like Frieze, Tate Britain, and the National Gallery of Art, Gupta has authored notable publications, including "Come Out" and "We Were Here: Sexuality, Photography, and Cultural Difference."
+                
+                His work is held in prestigious collections worldwide, including the Tokyo Museum of Photography, Victoria & Albert Museum, Tate Modern, and Harvard University.
+                
+                Currently living and working in London, Gupta is a professorial fellow at UCA, Farnham, and holds teaching roles at Kingston University and the Royal College of Art. He served as lead curator for the Houston Fotofest in 2018.
+            </p>
+            <!-- <a class="text-indigo-500 inline-flex items-center mt-4">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a> -->
+          </div>
+        </div>
+  
+        <!-- Exhibition Block 3 -->
+        <div class="py-8 flex flex-wrap md:flex-nowrap">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col mr-10 ">
+            <!-- Replace CATEGORY text with an image -->
+            <img src="Artist/shailesh.png" alt="Category Image 3" class="w-full h-auto">
+            
+          </div>
+          <div class="md:flex-grow">
+            <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">SHAILESH B.R.</h2>
+            <p><b>INDIAN, B. 1986</b></p>
+            <p class="leading-relaxed">
+                Shailesh B.R., born in 1986 in Karnataka, is a mixed-media artist known for collage and kinetic sculptures. He holds a degree in fine arts and explores spatial dynamics inspired by artists like Mukherjee and Matisse. Exhibiting globally, Shailesh's works touch on AI and enlightenment. Solo shows include "The Last Brahmin" in Nice, France (2020). In 2023, he was a resident at the Institute of Science and Technology Austria. A finalist for the Sovereign Art Prize in 2021, Shailesh lives and works in New Delhi, India.
+            </p>
+            <!-- <a class="text-indigo-500 inline-flex items-center mt-4">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a> -->
+          </div>
+        </div>
+        <!-- Exhibition Block 4 -->
+        <div class="py-8 flex flex-wrap md:flex-nowrap">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col mr-10 ">
+            <!-- Replace CATEGORY text with an image -->
+            <img src="Artist/jasmin.png" alt="Category Image 3" class="w-full h-auto">
+            
+          </div>
+          <div class="md:flex-grow">
+            <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">JASMINE NILANI JOSEPH</h2>
+            <p><b> SRI LANKAN, B. 1990</b></p>
+            <p class="leading-relaxed">
+                Jasmine Nilani Joseph, born in Jaffna in 1990, holds a bachelor’s degree in fine arts from the University of Jaffna (2015). Notable for her first solo exhibition at the University of Jaffna (2019) and an open-studio exhibition at Pepper House, Kochi (2020), she has exhibited globally, including venues like Gropius Bau, Berlin (2023), and Vadehra Art Gallery, New Delhi (2023). Her work is featured in prestigious publications like Phaidon’s "Vitamin D3." Winner of the DBF Asia Art Future Award (2022), Joseph resides and works in Sri Lanka, with her art included in private collections.
+            </p>
+            <!-- <a class="text-indigo-500 inline-flex items-center mt-4">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+      
+      
+      
+
+      <section class="text-gray-600 body-font relative">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1 id="contactexb" class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
+          </div>
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                  <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                  <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                  <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Contact</button>
+              </div>
+              <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+                <a class="text-indigo-500" href="https://www.instagram.com/art.galleryy7?igsh=OGllMG5yZjI0Zjdq">ArtGallery</a>
+                <p class="leading-normal my-5">@ArtGallery 2024 - Ankitt
+                </p>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-4 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-4 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-4 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const j = localStorage.getItem('username');
+        console.log(j);
+        const user = document.getElementById('username');
+        user.innerHTML=j;
+    });
+        const dropDown = document.getElementById('clickable');
+        dropDown.addEventListener('click',()=>{
+          const drp=document.getElementById('drp');
+          if(drp.classList.contains("hidden")){
+            drp.classList.remove("hidden");
+            drp.classList.add("block")
+          }else{
+            drp.classList.remove("block")
+            drp.classList.add("hidden");
+          }
+
+        })
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', (event) => {
+          const targetElement = event.target ;
+          if (!dropDown.contains(targetElement) && !drp.contains(targetElement)) {
+            drp.classList.remove('block');
+            drp.classList.add('hidden');
+          }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('[data-carousel="slide"]');
+            const items = carousel.querySelectorAll('[data-carousel-item]');
+            const prevBtn = carousel.querySelector('[data-carousel-prev]');
+            const nextBtn = carousel.querySelector('[data-carousel-next]');
+    
+            let currentIndex = 0;
+            let intervalId;
+    
+            const showItem = (index) => {
+                items.forEach((item, i) => {
+                    if (i === index) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            };
+    
+            const updateIndicators = () => {
+                const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
+                indicators.forEach((indicator, i) => {
+                    if (i === currentIndex) {
+                        indicator.setAttribute('aria-current', 'true');
+                    } else {
+                        indicator.setAttribute('aria-current', 'false');
+                    }
+                });
+            };
+    
+            const prevSlide = () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                showItem(currentIndex);
+                updateIndicators();
+            };
+    
+            const nextSlide = () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                showItem(currentIndex);
+                updateIndicators();
+            };
+    
+            const startAutoSlide = () => {
+                intervalId = setInterval(() => {
+                    nextSlide();
+                }, 2000); // Adjust the interval as needed (in milliseconds)
+            }
+    
+            const stopAutoSlide = () => {
+                clearInterval(intervalId);
+            };
+    
+            prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                prevSlide();
+            });
+    
+            nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                nextSlide();
+            });
+    
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+    
+            // Initial setup
+            showItem(currentIndex);
+            updateIndicators();
+            startAutoSlide();
+        });
+    </script>
+    
+</body>
+</html>
