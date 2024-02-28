@@ -273,6 +273,38 @@ app.post('/contactForm',async(req,res)=>{
                 console.log("Error inserting record:", error);
                 res.json({done:false})
             } else {
+                console.log("Record Inserted successfully!");
+                res.json({done:true})
+            }
+            res.end();
+    });
+})
+
+app.post('/checkout',async(req,res)=>{
+    const username = req.body.username;
+    connection.query("INSERT INTO orders SELECT * FROM cart WHERE user_name=?;",
+        [username],
+        function (error, results, fields) {
+            if (error) {
+                console.log("Error inserting record:", error);
+                res.json({done:false})
+            } else {
+                console.log("Record INSERTED successfully!");
+                res.json({done:true})
+            }
+            res.end();
+    });
+})
+
+app.delete('/removeCart',async(req,res)=>{
+    const username = req.body.username;
+    connection.query("DELETE FROM CART WHERE USER_NAME=?",
+        [username],
+        function (error, results, fields) {
+            if (error) {
+                console.log("Error inserting record:", error);
+                res.json({done:false})
+            } else {
                 console.log("Record deleted successfully!");
                 res.json({done:true})
             }

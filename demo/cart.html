@@ -58,7 +58,7 @@
                   <span>Total cost</span>
                   <span id="PRICE2">$600</span>
                 </div>
-                <button href="#" class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+                <button id="checkout" class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
               </div>
             </div>
       
@@ -119,6 +119,31 @@
             body: JSON.stringify({ username: username, art_id: id })
           })
         }  
+        const checkout = document.getElementById('checkout');
+        checkout.addEventListener('click',function(){
+          const username = localStorage.getItem('username');
+          async function checkout (){
+            const res = await fetch('/checkout',{
+              method:"POST",
+              headers:{
+                'Content-Type':"application/json"
+              },
+              body:JSON.stringify({username:username})
+            });
+          }
+
+          async function remove (){
+            const res = await fetch('/removeCart',{
+              method:"DELETE",
+              headers:{
+                'Content-Type':"application/json"
+              },
+              body:JSON.stringify({username:username})
+            });
+          }
+          checkout();
+          remove();
+        })
       </script>
 </body>
 </html>
