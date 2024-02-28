@@ -108,7 +108,7 @@ const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.set("view engine", "ejs"); // Set EJS as the view engine
 const encoder = bodyParser.urlencoded({ extended: true });
-
+app.use(express.json());
 
 
 
@@ -184,7 +184,6 @@ app.get('/getCartdata', async (req, res) => {
     const { username } = req.query;
 
     try {
-        console.log(username)
         connection.query("SELECT C.ART_ID,A.PRICE,A.TITLE FROM CART C,ART A WHERE c.USER_NAME=? AND C.ART_ID=A.ART_ID;",
         [username],
         function (error, results, fields) {
@@ -223,9 +222,11 @@ app.get('/getAllItems',async(req,res)=>{
     }
 })
 
-app.post('/addToCart',async(req,res)=>{
-    const {username,art_id} = req.body
-    connection.query("INSERT INTO cart(`user_name`, `art_id`) VALUES (?,?);",
+app.post('/addToCart',function(req,res){
+    const username = req.body.username
+    const art_id = req.body.art_id
+    console.log(username)
+    connection.query("INSERT INTO cart (`user_name`, `art_id`) VALUES (?,?);",
         [username, art_id],
         function (error, results, fields) {
             if (error) {
@@ -239,6 +240,24 @@ app.post('/addToCart',async(req,res)=>{
     });
 })
 
+app.delete('/removeCartItem',async(req,res)=>{
+    const username = req.body.username
+    const art_id = req.body.art_id
+    console.log(username)
+    console.log(art_id)
+    connection.query("DELETE FROM CART WHERE `user_name`=? AND `art_id`=?;",
+        [username, art_id],
+        function (error, results, fields) {
+            if (error) {
+                console.log("Error inserting record:", error);
+                res.json({done:false})
+            } else {
+                console.log("Record deleted successfully!");
+                res.json({done:true})
+            }
+            res.end();
+    });
+})
 
 // set app port 
 app.listen(4000);

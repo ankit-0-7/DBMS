@@ -114,19 +114,6 @@
 
       
       <script>
-        // Move the addToCart function outside the getAllItems function
-        async function addToCart(id) {
-          const user = document.getElementById('username');
-          const res = await fetch('/addToCart',{
-            method:"POST",
-            headers:{
-              "Content-Type":"application/json"
-            },
-            body:JSON.stringify({username:user,art_id:id})
-          })
-          
-        }
-      
         document.addEventListener('DOMContentLoaded', function () {
           const j = localStorage.getItem('username');
           console.log(j);
@@ -147,19 +134,32 @@
             displayElement.innerHTML = art.map((artItem) => {
               return `<div class="mb-10 px-4">
                         <div class="rounded-lg h-64 overflow-hidden">
-                          <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1201x501">
+                          <img alt="content" class="object-cover object-center h-full w-full" src="./selling arts/${artItem.art_id}.png">
                         </div>
                         <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">ARPITA SINGH </h2>
                         <p class="leading-relaxed text-base">${artItem.title}</p>
                         <p>${artItem.price}</p>
-                        <button onclick="addToCart(${artItem.art_id})" class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
+                        <button onclick="addToCart('${artItem.art_id}')" class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
                       </div>`;
             });
           }
       
           getAllItems();
+      
         });
+          async function addToCart(id) {
+            const username = localStorage.getItem('username');
+            console.log(id);
+            const res = await fetch('/addToCart', {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ username: username, art_id: id })
+            })
+          }
       </script>
+      
       
     
 </body>
