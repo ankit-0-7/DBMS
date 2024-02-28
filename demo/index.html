@@ -57,7 +57,7 @@
                     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="/demo/Painting/IMG-20240223-WA0024.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src="demo/Painting/IMG-20240223-WA0024.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -244,28 +244,14 @@
 
       
     <script>
-      
+      window.onload= function(){
+        const j = localStorage.getItem('username');
+        console.log(j);
+        const user = document.getElementById('username');
+        user.innerHTML=j;
+      }
         
-        const dropDown = document.getElementById('clickable');
-        dropDown.addEventListener('click',()=>{
-          const drp=document.getElementById('drp');
-          if(drp.classList.contains("hidden")){
-            drp.classList.remove("hidden");
-            drp.classList.add("block")
-          }else{
-            drp.classList.remove("block")
-            drp.classList.add("hidden");
-          }
-
-        })
-        // Close dropdown when clicking outside of it
-        document.addEventListener('click', (event) => {
-          const targetElement = event.target ;
-          if (!dropDown.contains(targetElement) && !drp.contains(targetElement)) {
-            drp.classList.remove('block');
-            drp.classList.add('hidden');
-          }
-        });
+      
         document.addEventListener('DOMContentLoaded', function () {
           const carousel = document.querySelector('[data-carousel="slide"]');
           const items = carousel.querySelectorAll('[data-carousel-item]');
@@ -337,16 +323,12 @@
           startAutoSlide();
         });
         //<!-- LOGOUT FUNCTION -->
-        document.getElementById('logout').addEventListener('click',function(){
-          localStorage.removeItem('username');
-          console.log("cliced")
-          window.location.href = 'login.html';
-        })
-        document.addEventListener('DOMContentLoaded', function () {
-          const j = localStorage.getItem('username');
-          console.log(j);
-          const user = document.getElementById('username');
-          user.innerHTML=j;
+        document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById("logout").addEventListener("click", function() {
+              localStorage.removeItem('username');
+              console.log("clicked");
+              window.location.href = '/'; // Uncomment this line if needed
+          });
         });
       </script>
     

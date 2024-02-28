@@ -104,7 +104,7 @@ const app = express();
 // const bodyParser = require("body-parser");
 // const encoder = bodyParser.urlencoded();
 // const encoder = bodyParser.urlencoded({ extended: true });
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.set("view engine", "ejs"); // Set EJS as the view engine
 const encoder = bodyParser.urlencoded({ extended: true });
@@ -202,6 +202,9 @@ app.get('/getCartdata', async (req, res) => {
         console.error(error);
         return res.status(500).json({ error: 'Internal Server Error' });
     }
+    // Add this to your login endpoint
+res.cookie('user', username, { maxAge: 3600000 }); // Set cookie to expire in 1 hour
+
 });
 
 
