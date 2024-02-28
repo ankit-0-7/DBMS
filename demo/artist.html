@@ -31,6 +31,8 @@
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg> -->
       </div>
+      <button id="logout" class="inline-flex ml-2 text-white items-center bg-gray-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 rounded text-base mt-4 md:mt-0 transition-all ">LogOut
+      </button>
         </div>
       </header>
       <!-- Exhibitions -->
@@ -134,14 +136,6 @@
       </div>
     </div>
   </section>
-  
-      
-      
-      
-
-     
-      
-
       
     <script>
       document.addEventListener('DOMContentLoaded', function () {
@@ -150,95 +144,13 @@
         const user = document.getElementById('username');
         user.innerHTML=j;
     });
-        const dropDown = document.getElementById('clickable');
-        dropDown.addEventListener('click',()=>{
-          const drp=document.getElementById('drp');
-          if(drp.classList.contains("hidden")){
-            drp.classList.remove("hidden");
-            drp.classList.add("block")
-          }else{
-            drp.classList.remove("block")
-            drp.classList.add("hidden");
-          }
-
-        })
-        // Close dropdown when clicking outside of it
-        document.addEventListener('click', (event) => {
-          const targetElement = event.target ;
-          if (!dropDown.contains(targetElement) && !drp.contains(targetElement)) {
-            drp.classList.remove('block');
-            drp.classList.add('hidden');
-          }
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.querySelector('[data-carousel="slide"]');
-            const items = carousel.querySelectorAll('[data-carousel-item]');
-            const prevBtn = carousel.querySelector('[data-carousel-prev]');
-            const nextBtn = carousel.querySelector('[data-carousel-next]');
-    
-            let currentIndex = 0;
-            let intervalId;
-    
-            const showItem = (index) => {
-                items.forEach((item, i) => {
-                    if (i === index) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-            };
-    
-            const updateIndicators = () => {
-                const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
-                indicators.forEach((indicator, i) => {
-                    if (i === currentIndex) {
-                        indicator.setAttribute('aria-current', 'true');
-                    } else {
-                        indicator.setAttribute('aria-current', 'false');
-                    }
-                });
-            };
-    
-            const prevSlide = () => {
-                currentIndex = (currentIndex - 1 + items.length) % items.length;
-                showItem(currentIndex);
-                updateIndicators();
-            };
-    
-            const nextSlide = () => {
-                currentIndex = (currentIndex + 1) % items.length;
-                showItem(currentIndex);
-                updateIndicators();
-            };
-    
-            const startAutoSlide = () => {
-                intervalId = setInterval(() => {
-                    nextSlide();
-                }, 2000); // Adjust the interval as needed (in milliseconds)
-            }
-    
-            const stopAutoSlide = () => {
-                clearInterval(intervalId);
-            };
-    
-            prevBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                prevSlide();
-            });
-    
-            nextBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                nextSlide();
-            });
-    
-            carousel.addEventListener('mouseenter', stopAutoSlide);
-            carousel.addEventListener('mouseleave', startAutoSlide);
-    
-            // Initial setup
-            showItem(currentIndex);
-            updateIndicators();
-            startAutoSlide();
+       
+        document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById("logout").addEventListener("click", function() {
+              localStorage.removeItem('username');
+              console.log("clicked");
+              window.location.href = '/'; // Uncomment this line if needed
+          });
         });
     </script>
     
