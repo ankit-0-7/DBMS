@@ -192,7 +192,6 @@ app.get('/getCartdata', async (req, res) => {
                 console.log("Error inserting record:", error);
                 return res.status(404).json({done:false});
             } else {
-                console.log("Record retrived successfully!");
                 return res.status(200).json({cart:results,done:true});
             }
             res.end();
@@ -203,9 +202,42 @@ app.get('/getCartdata', async (req, res) => {
         return res.status(500).json({ error: 'Internal Server Error' });
     }
     // Add this to your login endpoint
-res.cookie('user', username, { maxAge: 3600000 }); // Set cookie to expire in 1 hour
+// res.cookie('user', username, { maxAge: 3600000 }); // Set cookie to expire in 1 hour
 
 });
+
+app.get('/getAllItems',async(req,res)=>{
+    try {
+        connection.query("SELECT * FROM art;",
+        function (error, results, fields) {
+            if (error) {
+                console.log("Error inserting record:", error);
+                return res.status(404).json({done:false});
+            } else {
+                console.log("Record retrived successfully!");
+                return res.status(200).json({art:results,done:true});
+            }
+        });
+    } catch (error) {
+        
+    }
+})
+
+app.post('/addToCart',async(req,res)=>{
+    const {username,art_id} = req.body
+    connection.query("INSERT INTO cart(`user_name`, `art_id`) VALUES (?,?);",
+        [username, art_id],
+        function (error, results, fields) {
+            if (error) {
+                console.log("Error inserting record:", error);
+                res.json({done:false})
+            } else {
+                console.log("Record inserted successfully!");
+                res.json({done:true})
+            }
+            res.end();
+    });
+})
 
 
 // set app port 

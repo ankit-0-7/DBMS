@@ -31,66 +31,15 @@
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg> -->
       </div>
+      <button id="logout" class="inline-flex text-white items-center bg-gray-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 rounded text-base mt-4 md:mt-0 transition-all ">LogOut
+      </button>
         </div>
       </header>
       <!--shop items -->
       <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-            <div class="sm:w-1/2 mb-10 px-4">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1201x501">
-              </div>
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">ARPITA SINGH </h2>
-              <p class="leading-relaxed text-base">| THIS COULD BE US, YOU, OR ANYBODY ELSE | LIMITED EDITION ETCHING |</p>
-              <p>₹ 50,000</p>
-              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
-            </div>
-            <div class="sm:w-1/2 mb-10 px-4">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1202x502">
-              </div>
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">ARPITA SINGH</h2>
-              <p class="leading-relaxed text-base"> | I COULD SEE LONDON THROUGH CLOUDS | LIMITED EDITION ETCHING |</p>
-              <p> ₹ 90,000</p>
-              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
-            </div>
-            <div class="sm:w-1/2 mb-10 px-4">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1202x502">
-              </div>
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">PARAMJIT SINGH </h2>
-              <p class="leading-relaxed text-base">| WOODS | LIMITED EDITION ETCHING |</p>
-              <p> ₹ 1,90,000</p>
-              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
-            </div>
-            <div class="sm:w-1/2 mb-10 px-4">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1202x502">
-              </div>
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">PARAMJIT SINGH </h2>
-              <p class="leading-relaxed text-base">| GRASS WATER - I | LIMITED EDITION ETCHING |</p>
-              <p> ₹ 80,000</p>
-              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
-            </div>
-            <div class="sm:w-1/2 mb-10 px-4">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1202x502">
-              </div>
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">PARAMJIT SINGH </h2>
-              <p class="leading-relaxed text-base">| A TREE | LIMITED EDITION ETCHING |</p>
-              <p>  ₹ 70,000</p>
-              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
-            </div>
-            <div class="sm:w-1/2 mb-10 px-4">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1202x502">
-              </div>
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">PARAMJIT SINGH </h2>
-              <p class="leading-relaxed text-base">| EIGHT TREES | LIMITED EDITION ETCHING |</p>
-              <p> ₹ 55,000</p>
-              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
-            </div>
+        <div class="container w-max flex justify-center px-5 py-24 mx-auto">
+          <div id="display" class="flex flex-wrap w-screen text-center">
+
           </div>
         </div>
       </section>
@@ -164,104 +113,54 @@
       
 
       
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const j = localStorage.getItem('username');
-        console.log(j);
-        const user = document.getElementById('username');
-        user.innerHTML=j;
-    });
-        const dropDown = document.getElementById('clickable');
-        dropDown.addEventListener('click',()=>{
-          const drp=document.getElementById('drp');
-          if(drp.classList.contains("hidden")){
-            drp.classList.remove("hidden");
-            drp.classList.add("block")
-          }else{
-            drp.classList.remove("block")
-            drp.classList.add("hidden");
-          }
-
-        })
-        // Close dropdown when clicking outside of it
-        document.addEventListener('click', (event) => {
-          const targetElement = event.target ;
-          if (!dropDown.contains(targetElement) && !drp.contains(targetElement)) {
-            drp.classList.remove('block');
-            drp.classList.add('hidden');
-          }
-        });
+      <script>
+        // Move the addToCart function outside the getAllItems function
+        async function addToCart(id) {
+          const user = document.getElementById('username');
+          const res = await fetch('/addToCart',{
+            method:"POST",
+            headers:{
+              "Content-Type":"application/json"
+            },
+            body:JSON.stringify({username:user,art_id:id})
+          })
+          
+        }
+      
         document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.querySelector('[data-carousel="slide"]');
-            const items = carousel.querySelectorAll('[data-carousel-item]');
-            const prevBtn = carousel.querySelector('[data-carousel-prev]');
-            const nextBtn = carousel.querySelector('[data-carousel-next]');
-    
-            let currentIndex = 0;
-            let intervalId;
-    
-            const showItem = (index) => {
-                items.forEach((item, i) => {
-                    if (i === index) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-            };
-    
-            const updateIndicators = () => {
-                const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
-                indicators.forEach((indicator, i) => {
-                    if (i === currentIndex) {
-                        indicator.setAttribute('aria-current', 'true');
-                    } else {
-                        indicator.setAttribute('aria-current', 'false');
-                    }
-                });
-            };
-    
-            const prevSlide = () => {
-                currentIndex = (currentIndex - 1 + items.length) % items.length;
-                showItem(currentIndex);
-                updateIndicators();
-            };
-    
-            const nextSlide = () => {
-                currentIndex = (currentIndex + 1) % items.length;
-                showItem(currentIndex);
-                updateIndicators();
-            };
-    
-            const startAutoSlide = () => {
-                intervalId = setInterval(() => {
-                    nextSlide();
-                }, 2000); // Adjust the interval as needed (in milliseconds)
-            }
-    
-            const stopAutoSlide = () => {
-                clearInterval(intervalId);
-            };
-    
-            prevBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                prevSlide();
+          const j = localStorage.getItem('username');
+          console.log(j);
+          const user = document.getElementById('username');
+          user.innerHTML = j;
+      
+          document.getElementById("logout").addEventListener("click", function () {
+            localStorage.removeItem('username');
+            console.log("clicked");
+            window.location.href = '/'; // Uncomment this line if needed
+          });
+      
+          async function getAllItems() {
+            const res = await fetch('/getAllItems');
+            const data = await res.json();
+            const art = data.art; // Make sure art is declared in the correct scope
+            const displayElement = document.getElementById('display');
+            displayElement.innerHTML = art.map((artItem) => {
+              return `<div class="mb-10 px-4">
+                        <div class="rounded-lg h-64 overflow-hidden">
+                          <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1201x501">
+                        </div>
+                        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">ARPITA SINGH </h2>
+                        <p class="leading-relaxed text-base">${artItem.title}</p>
+                        <p>${artItem.price}</p>
+                        <button onclick="addToCart(${artItem.art_id})" class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
+                      </div>`;
             });
-    
-            nextBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                nextSlide();
-            });
-    
-            carousel.addEventListener('mouseenter', stopAutoSlide);
-            carousel.addEventListener('mouseleave', startAutoSlide);
-    
-            // Initial setup
-            showItem(currentIndex);
-            updateIndicators();
-            startAutoSlide();
+          }
+      
+          getAllItems();
         });
-    </script>
+      </script>
+      
     
 </body>
 </html>

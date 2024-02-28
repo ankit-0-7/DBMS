@@ -43,33 +43,5 @@
         </form>
       </div>
     </section>
-    <!-- <script>
-       document.getElementById('registerForm').addEventListener('submit',(event)=>{
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        const phonenumber = document.getElementById('phonenumber').value;
-        const first_name = document.getElementById('first_name').value;
-        const last_name = document.getElementById('last_name').value;
-        async function reg(){
-          const res = await fetch('/reg',{
-            method:"POST",
-            headers:{
-              'Content-type':"application/json"
-            },
-            body:JSON.stringify({
-              f_name:first_name,
-              l_name:last_name,
-              username:username,
-              phoneNo:phonenumber,
-              password:password
-            })
-          });
-          const data = await res.json();
-          const test = document.getElementById('test');
-        }
-        reg();
-      }) 
-    </script> -->
 </body>
 </html>
