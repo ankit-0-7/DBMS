@@ -259,5 +259,26 @@ app.delete('/removeCartItem',async(req,res)=>{
     });
 })
 
+app.post('/contactForm',async(req,res)=>{
+    const username = req.body.username;
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message;
+    console.log(username)
+    console.log(message)
+    connection.query("INSERT INTO CONTACT VALUES(?,?,?,?);",
+        [username,name,email, message],
+        function (error, results, fields) {
+            if (error) {
+                console.log("Error inserting record:", error);
+                res.json({done:false})
+            } else {
+                console.log("Record deleted successfully!");
+                res.json({done:true})
+            }
+            res.end();
+    });
+})
+
 // set app port 
 app.listen(4000);
